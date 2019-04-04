@@ -1,3 +1,4 @@
+vim的经典之处在于双手不用离开键盘,沉浸式的开发体验   
 ### 查看帮助文档
 `:help emmet` 或者 `:h emmet` 
 如果怕输入不准确可以继续按`<C-d>` 即(Ctrl + D),获取提示
@@ -124,7 +125,7 @@ import SideBar from '@/components/SideBar'
 
 
   ### 按键
-  - 自定义配置终端,局部环境变量,宏命令
+  - 自定义配置终端,局部环境变量,宏命令,或者切换成powershell,bash等
   `nmap <F10> :rightbelow vert term<cr> c:\users\administrator\env.bat & color 0a & cls & echo hello<cr>
 ` 
     - `<C-w>h` 跳到左侧窗口
@@ -145,5 +146,19 @@ import SideBar from '@/components/SideBar'
     - zj 向下移动。到达下一个折叠的开始处
     - zk 向上移动到前一折叠的结束处
 - `:10,100w!test.js` 保存10到100行到text.js文件
-- `:1,3!node` 执行1到3行返回结果
-- `:5!node %` 执行当前文件返回结果替换到第5行
+- 执行当前js  
+    - 安装 AsyncRun.vim, `AsyncRun node %`
+    - `:1,3!node` 执行1到3行返回结果
+    - `:5!node %` 执行当前文件返回结果替换到第5行
+- 移动到屏幕中央
+    - `M` 移动光标到屏幕中央
+    - `zz` 移动当前行到屏幕中央
+    - `<C-d>`,`<C-U>` 下翻 上翻
+- 输入状态下的移动,状态切换
+```vim script
+imap <m-k> <up>
+imap <m-j> <down>
+imap <m-l> <right>
+imap <m-h> <left>
+inoremap jj <esc>
+```
